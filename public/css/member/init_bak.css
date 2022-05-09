@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* 로그인 */
+#loginW { position: relative; width: 100%; font-size: 13px; background: #f5f5f5; min-height: 900px; box-sizing: border-box; padding: 155px 0; }
+
+#loginW.partner { position: absolute; top: 0; left: 0; height: 100%; }
+
+#loginW .login { margin: auto; width: 880px; }
+
+#loginW .login h1 { text-align: center; }
+
+#loginW .login h1.join { text-align: center; margin-top: 30px; }
+
+#loginW .login .box { width: 860px; border: 10px solid #e5e5e5; margin-top: 40px; padding: 50px 0 30px; background: #fff; box-sizing: border-box; }
+
+#loginW .login .box .left { float: left; width: 330px; margin: 0 38px; }
+
+#loginW .login .box .left p { text-align: center; font-weight: bold; margin-top: 75px; margin-bottom: 20px; letter-spacing: -0.5px; }
+
+#loginW .login .box .left .log_img { border-bottom: 2px solid #d6d6d6; padding-bottom: 20px; }
+
+#loginW .login .box .left .log_txt { font-size: 14px; letter-spacing: -1.1px; font-weight: normal; color: #373737; font-family: '나눔고딕','Nanum Gothic',Dotum, sans-serif; text-align: left; margin: 28px auto 0; line-height: 1.7; color: #383838; }
+
+#loginW .login .box .left .sub_txt { font-size: 14px; font-weight: bold; color: #ff4e00; margin: 0; text-align: left; margin-top: 10px; font-family: '나눔고딕','Nanum Gothic',Dotum, sans-serif; }
+
+#loginW .login .box .left .loginD_btn { width: 232px; height: 48px; border: none; color: #f85d04; font-size: 16px; font-weight: bold; cursor: pointer; text-align: center; line-height: 2.9; background: url(//img.go.co.kr/go/login_btn2.jpg); letter-spacing: -1px; margin-left: 45px; }
+
+#loginW .login .box .line { width: 1px; height: 225px; background: #e5e5e5; float: left; }
+
+#loginW .login .box .right { float: left; width: 270px; margin: 0 45px; }
+
+#loginW .login .box .right label { float: left; margin-top: 20px; color: #333333; }
+
+#loginW .login .box .right .login_btn { float: left; width: 354px; height: 47px; border: none; color: #fff; font-size: 20px; font-weight: bold; cursor: pointer; text-align: center; letter-spacing: 1px; line-height: 2.3; background: url(//img.go.co.kr/go/login_btn.jpg); }
+
+#loginW .login .box .right .login_btn + .login_btn { margin-top: 10px; }
+
+#loginW .login .txt { text-align: center; margin-top: 30px; letter-spacing: -0.1px; }
+
+.form-controlh { width: 330px; height: 34px; padding: 5px 12px; font-size: 14px; line-height: 1.42857143; color: #555555; border: 1px solid #cccccc; text-align: left; margin-bottom: 13px; border-radius: 3px; }
