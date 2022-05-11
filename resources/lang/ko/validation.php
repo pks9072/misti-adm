@@ -144,7 +144,12 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+
         ],
+
+        'uid' => [
+            'unique' => '존재하는 아이디입니다.',
+        ]
     ],
 
     /*
