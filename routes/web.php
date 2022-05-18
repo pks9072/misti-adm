@@ -20,8 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
-    //return view('dashboard');
-    return redirect()->route('rent.index');
+    return view('dashboard');
+    //return redirect()->route('dashboard');
 })->name('home');
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

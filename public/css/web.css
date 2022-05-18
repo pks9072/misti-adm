@@ -1,0 +1,110 @@
+.item_table {
+  width: 100%;
+}
+.item_table tr {
+  height: 56px;
+  border-bottom: 1px solid var(--color-border);
+}
+.item_table td {
+  padding: 12px;
+}
+.item_table td:first-child {
+  border-right: 1px solid var(--color-border);
+}
+
+.filter_item {
+  width: 100%;
+  max-width: 260px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+}
+.filter_item select {
+  width: 100%;
+  max-width: 260px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(/common/img/arrow.svg) no-repeat 90% center;
+  padding: 0.657rem 0.75rem;
+  height: 44px;
+}
+.filter_item > span {
+  border-left: 1px solid var(--color-border);
+  height: 100%;
+  line-height: 44px;
+  color: #bdbdbd;
+  width: 44px;
+  text-align: center;
+}
+
+.table_input {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  padding: 0.657rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid var(--color-border);
+  color: var(--color-black);
+  background-color: #fff;
+  border-radius: 2px;
+  outline: unset;
+}
+.banner_td {
+  height: 56px;
+}
+
+.banner_img {
+  /*width: 80px;*/
+  height: 80px;
+  /*display: none;*/
+}
+.banner_img_on {
+  display: block;
+  margin-bottom: 12px;
+}
+.main_ads_banner,
+.main_sub_banner {
+  display: none;
+}
+
+.banner_on {
+  display: block;
+}
+
+.coupon_btn {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--color-main);
+  color: #fff;
+  padding: 12px;
+  border-radius: 2px;
+}
+
+.coupon_edit_btn {
+  color: #fff;
+  padding: 12px 20px;
+  background: var(--color-main);
+  border: 1px solid var(--color-main);
+  cursor: pointer;
+  height: 44px;
+  width: 220px;
+  display: block;
+}
+
+.product_list_btn {
+  color: #fff;
+  padding: 12px 20px;
+  background: var(--color-main);
+  border: 1px solid var(--color-main);
+  cursor: pointer;
+  height: 44px;
+  width: 220px;
+  display: block;
+}

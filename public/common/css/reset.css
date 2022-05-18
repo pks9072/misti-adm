@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+/* 노토산스 */
+@font-face {
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: 300;
+  src: url(/fonts/notokr-light.eot);
+  src: url(/fonts/notokr-light.eot?#iefix) format("embedded-opentype"),
+    url(/fonts/notokr-light.woff2) format("woff2"),
+    url(/fonts/notokr-light.woff) format("woff"),
+    url(/fonts/notokr-light.ttf) format("truetype"),
+    url(/fonts/notokr-light.svg#notokr-light) format("svg");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: 500;
+  src: url(/fonts/notokr-regular.eot);
+  src: url(/fonts/notokr-regular.eot?#iefix) format("embedded-opentype"),
+    url(/fonts/notokr-regular.woff2) format("woff2"),
+    url(/fonts/notokr-regular.woff) format("woff"),
+    url(/fonts/notokr-regular.ttf) format("truetype"),
+    url(/fonts/notokr-regular.svg#notokr-regular) format("svg");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/notokr-medium.eot);
+  src: url(/fonts/notokr-medium.eot?#iefix) format("embedded-opentype"),
+    url(/fonts/notokr-medium.woff2) format("woff2"),
+    url(/fonts/notokr-medium.woff) format("woff"),
+    url(/fonts/notokr-medium.ttf) format("truetype"),
+    url(/fonts/notokr-medium.svg#notokr-medium) format("svg");
+}
+@font-face {
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: 900;
+  src: url(/fonts/notokr-bold.eot);
+  src: url(/fonts/notokr-bold.eot?#iefix) format("embedded-opentype"),
+    url(/fonts/notokr-bold.woff2) format("woff2"),
+    url(/fonts/notokr-bold.woff) format("woff"),
+    url(/fonts/notokr-bold.ttf) format("truetype"),
+    url(/fonts/notokr-bold.svg#notokr-bold) format("svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#header,
+#contents,
+#footer {
+  position: relative;
+}
+html {
+  /* min-width:320px;overflow-x:hidden;overflow-y:scroll */
+}
+body {
+  font-family: "roboto", "NotoSans", "Malgun Gothic", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #292929;
+  letter-spacing: -0.75px;
+}
+button,
+select,
+option {
+  font-family: "roboto", "NotoSans", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.75px;
+}
+ul,
+ol,
+dl,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+img {
+  border: 0;
+}
+address {
+  font-style: normal;
+}
+table {
+  border-collapse: collapse;
+}
+table td {
+  padding: 0;
+}
+caption {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  font-size: 0;
+}

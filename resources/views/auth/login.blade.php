@@ -1,73 +1,49 @@
-@extends('layouts.app')
-
-@section('content')
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>살구마켓 관리자</title>
+    <link rel="stylesheet" href="{{ asset('common/css/reset.css') }}" />
+    <link rel="stylesheet" href="{{ asset('common/css/common.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet"
+    />
+</head>
+<body>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('로그인') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('이메일') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                                <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('비밀번호') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    {{--<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>--}}
-
-                                    <label class="form-check-label" for="remember">
-                                        {{--{{ __('Remember Me') }}--}}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('로그인') }}
-                                </button>
-
-                                {{--@if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif--}}
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <div class="wrapper">
+        <div class="title" style="color:#fff; font-size: 35px">
+            {{--<img src="/img/logo_white.svg" alt="logo" class="logo" />--}}
+            {{ config("app.name")  }}
         </div>
+        <div class="subtitle">
+            <h3>로그인</h3>
+        </div>
+
+        <form action="/login/proc" id="login_form" method="POST">
+            @csrf
+            <input type="hidden" name="check_form" value="sal9">
+            <div class="row">
+                <span class="material-icons-outlined"> person_outline </span>
+                <input type="text" name="mt_id" id="mt_id" placeholder="아이디" required />
+            </div>
+            <div class="row">
+                <span class="material-icons-outlined"> lock </span>
+                <input type="password" name="mt_pwd" id="mt_pwd" placeholder="비밀번호" required />
+            </div>
+            <p class="wrong">아이디 또는 비밀번호가 틀렸습니다.</p>
+            <div class="row button">
+                <input type="button" value="로그인" onclick="javascript:go_validation_event();"/>
+            </div>
+        </form>
     </div>
-</div>
-@endsection
+</body>
+</html>
+<script type="text/javascript" src="{{ URL::asset('js/jquery-1.12.4.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/login.js') }}"></script>
