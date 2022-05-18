@@ -14,6 +14,7 @@
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet"
     />
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
 <div class="container">
@@ -26,24 +27,26 @@
             <h3>로그인</h3>
         </div>
 
-        <form action="/login/proc" id="login_form" method="POST">
+        <form method="POST" action="{{ route('login') }}">
             @csrf
-            <input type="hidden" name="check_form" value="sal9">
             <div class="row">
                 <span class="material-icons-outlined"> person_outline </span>
-                <input type="text" name="mt_id" id="mt_id" placeholder="아이디" required />
+                {{--<input type="text" name="mt_id" id="mt_id" placeholder="아이디" required />--}}
+
+                <input id="uid" type="uid" class="form-control @error('uid') is-invalid @enderror" name="email" value="{{ old('uid') }}" required autocomplete="uid" autofocus>
             </div>
             <div class="row">
                 <span class="material-icons-outlined"> lock </span>
-                <input type="password" name="mt_pwd" id="mt_pwd" placeholder="비밀번호" required />
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
             </div>
-            <p class="wrong">아이디 또는 비밀번호가 틀렸습니다.</p>
+            @error('password')
+            <p class="wrong">{{ $message }}</p>
+            @enderror
+
             <div class="row button">
-                <input type="button" value="로그인" onclick="javascript:go_validation_event();"/>
+                <input type="submit" value="로그인"/>
             </div>
         </form>
     </div>
 </body>
 </html>
-<script type="text/javascript" src="{{ URL::asset('js/jquery-1.12.4.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/login.js') }}"></script>
