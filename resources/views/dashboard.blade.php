@@ -1,4 +1,4 @@
-@extends("layouts.adm")
+@extends("layouts.adm", ["css" => "admin", "m1" => "", "m2" => ""])
 
 @section("contents")
     <main class="main">
