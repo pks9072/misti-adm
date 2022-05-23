@@ -20,9 +20,30 @@
 </head>
 <body>
     <section class="admin_container">
-        @include("common.header")
+        <header>
+            @include("common.left")
+            @include("common.header")
+        </header>
+
 
         @yield("contents")
     </section>
+    <script>
+        $(document).ready(function(){
+            $(".more").click(function(){
+
+                if( $(this).attr("data-id")=='1')
+                {
+
+                }else{
+
+                    $(".more").attr("data-id","0");
+                    $(this).attr("data-id","1");
+                    $(".hidden_list").removeClass("show");
+                    $(this).find(".hidden_list").addClass("show");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
