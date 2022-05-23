@@ -72,5 +72,7 @@
                 </table>
             </div>
         </section>
+
+        {{ $list->appends(request()->query())->links() }}
     </main>
 @endsection

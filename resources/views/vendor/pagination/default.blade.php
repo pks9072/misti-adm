@@ -1,18 +1,25 @@
 @if ($paginator->hasPages())
-    <nav>
-        <ul class="pagination">
-            {{-- Previous Page Link --}}
+    <div class="pagenation">
+        <ul>
+            <a href="?page=1">
+                <li class="pre_10">
+                    <span class="material-icons">keyboard_double_arrow_left</span>
+                </li>
+            </a>
             @if ($paginator->onFirstPage())
-                <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
-                    <span aria-hidden="true">&lsaquo;</span>
-                </li>
+                <a href="javascript:alert('첫 페이지입니다.')">
+                    <li class="pre">
+                        <span class="material-icons-outlined">chevron_left</span>
+                    </li>
+                </a>
             @else
-                <li>
-                    <a href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">&lsaquo;</a>
-                </li>
+                <a href="{{ $paginator->previousPageUrl() }}">
+                    <li class="pre">
+                        <span class="material-icons-outlined">chevron_left</span>
+                    </li>
+                </a>
             @endif
 
-            {{-- Pagination Elements --}}
             @foreach ($elements as $element)
                 {{-- "Three Dots" Separator --}}
                 @if (is_string($element))
@@ -23,24 +30,36 @@
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
                         @if ($page == $paginator->currentPage())
-                            <li class="active" aria-current="page"><span>{{ $page }}</span></li>
+                            <a><li class="on">{{ $page }}</li></a>
                         @else
-                            <li><a href="{{ $url }}">{{ $page }}</a></li>
+                            <a href="{{ $url }}">
+                                <li>{{ $page }}</li>
+                            </a>
                         @endif
                     @endforeach
                 @endif
             @endforeach
 
-            {{-- Next Page Link --}}
+
             @if ($paginator->hasMorePages())
-                <li>
-                    <a href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">&rsaquo;</a>
-                </li>
+                <a href="{{ $paginator->nextPageUrl() }}">
+                    <li class="next">
+                        <span class="material-icons-outlined">chevron_right</span>
+                    </li>
+                </a>
             @else
-                <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
-                    <span aria-hidden="true">&rsaquo;</span>
-                </li>
+                <a href="javascript:alert('마지막 페이지입니다.')">
+                    <li class="next">
+                        <span class="material-icons-outlined">chevron_right</span>
+                    </li>
+                </a>
             @endif
+
+            <a href="?page={{ $paginator->lastPage() }}">
+                <li class="next_10">
+                    <span class="material-icons">keyboard_double_arrow_right</span>
+                </li>
+            </a>
         </ul>
-    </nav>
+    </div>
 @endif
