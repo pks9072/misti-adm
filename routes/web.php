@@ -24,4 +24,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
     //return redirect()->route('dashboard');
 })->name('home');
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/test', function () {
+    return view('test');
+});
+
