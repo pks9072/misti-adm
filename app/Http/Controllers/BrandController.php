@@ -2,18 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
+    private $css = "event";
+    private $m1 = "goods";
+    private $m2 = "brand";
+
+    public function __construct() {
+        $this->BrandModel = new Brand();
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $par["bname_k"] = $request->bname_k;
+        $par["bname_k"] = $request->bname_k;
+        $par["state"] = $request->state;
+
+        $arr = json_encode($par);
+        $list = $this->BrandModel->list($arr);
+
+        $data = [
+            "css" => $this->css,
+            "m1" => $this->m1,
+            "m2" => $this->m2,
+            "list" => $list
+        ];
+
+        return view("brand.index")->with($data);
     }
 
     /**
