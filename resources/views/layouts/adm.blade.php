@@ -1,48 +1,28 @@
+@php($css = "admin")
 <!DOCTYPE html>
-<!--[if IE 8]><html lang='ko-KR' class='no-js ie8 lt-ie10'><![endif]-->
-<!--[if IE 9]><html lang='ko-KR' class='no-js ie9 lt-ie10'><![endif]-->
-<!--[if !IE]><!-->
-<html lang='ko-KR'>
-<!--<![endif]-->
+<html lang="ko">
 <head>
-    @include('common.header')
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config("app.name") }}</title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ asset("common/css/reset.css") }}" />
+    <link rel="stylesheet" href="{{ asset("common/css/common.css") }}" />
+    <link rel="stylesheet" href="{{ asset("css/".$css.".css") }}" />
+
+    <script src="{{ asset("js/jquery-3.6.0.min.js") }}" ></script>
+    <script src="{{ asset("js/admin.js") }}" defer></script>
 </head>
+<body>
+    <section class="admin_container">
+        @include("common.header")
 
-<body class='page-{{ $page }}'>
-<div class='wrapper'>
-    <header class='header'>
-        @include('common.gnb')
-    </header>
-
-    @include('common.left')
-    @yield('content')
-    @yield('script')
-    <div id='layer'></div>
-    <div class='cf'></div>
-    <iframe id='excel_download' src='' style='display:none; visibility:hidden;'></iframe>
-
-    <div class="lds-mask" style="display: none">
-        <div class="lds-wrapper">
-            <div class="lds-container">
-                <div class="lds-facebook">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="lds-text">
-                    Loading...
-                </div>
-            </div>
-        </div>
-    </div>
-    @include('common.script')
-</div>
-<script>
-    $(document).on("keyup", ".phone", function() {
-        prev    = $(this).val();
-        str     = prev.replace(/[^0-9]/g, "").replace(/(^02|^0505|^01.{1}|^0[0-9]{2})([0-9]+)?([0-9]{4})/,"$1-$2-$3").replace("--", "-");
-        $(this).val(str);
-    });
-</script>
+        @yield("contents")
+    </section>
 </body>
 </html>
