@@ -1,4 +1,3 @@
-@php($css = "admin")
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,31 +18,14 @@
     <script src="{{ asset("js/admin.js") }}" defer></script>
 </head>
 <body>
-    <section class="admin_container">
+    <section class="{{ ($css == "admin") ? "admin_" : "" }}container">
         <header>
             @include("common.left")
             @include("common.header")
         </header>
-
-
         @yield("contents")
     </section>
-    <script>
-        $(document).ready(function(){
-            $(".more").click(function(){
-
-                if( $(this).attr("data-id")=='1')
-                {
-
-                }else{
-
-                    $(".more").attr("data-id","0");
-                    $(this).attr("data-id","1");
-                    $(".hidden_list").removeClass("show");
-                    $(this).find(".hidden_list").addClass("show");
-                }
-            });
-        });
-    </script>
+    @include("common.script")
+    <script src="{{ asset('js/common.js') }}"></script>
 </body>
 </html>
