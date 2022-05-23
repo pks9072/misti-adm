@@ -65,6 +65,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Package
 
+composer require barryvdh/laravel-debugbar --dev
+
 composer require laravel/ui
 
 php artisan ui bootstrap --auth
+
+php artisan vendor:publish (pagination)
