@@ -8,26 +8,48 @@
                     <h3>브랜드</h3>
                 </div>
                 <hr/>
-                <form name="s_form" id="s_form" method="GET" action="/member/list">
-                    <div class="flex pt_m pb_m flex_a_c pl_xl">
-                        <div class="filter_item mr_m">
-                            <select  name="item_ct" id="item_ct">
-                                <option value="mt_all">전체</option>
-                                <option value="mt_id">아이디</option>
-                                <option value="mt_name">회원명</option>
-                            </select>
-                        </div>
-                        <div class="flex flex_a_c">
-                            <input type="text" name="stx" id="stx" class="table_input mr_s" value=">">
-                            <button  type="button" class="user_btn"  onclick="javascript:go_search_event();">검색</button>
-                        </div>
-                    </div>
+                <form id="sform">
+                    <table class="item_table">
+                        <colgroup>
+                            <col style="width:20%"/>
+                            <col style="width:80%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="table_c text_ac">브랜드명</td>
+                                <td class="text_al">
+                                    <div class="flex flex_a_c">
+                                        <input type="text" name="key" class="table_input" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table_c text_ac">주문상태</td>
+                                <td class="text_al flex flex_a_c cate_line">
+                                    <div class="flex flex_a_c mr_l">
+                                        <input type="radio" name="state" id="s-all" class="mr_s" value="" checked>
+                                        <label for="s-all">전체</label>
+                                    </div>
+                                    <div class="flex flex_a_c mr_l">
+                                        <input type="radio" name="state" id="s1" class="mr_s" value="1" >
+                                        <label for="s1">노출</label>
+                                    </div>
+                                    <div class="flex flex_a_c mr_l">
+                                        <input type="radio" name="state" id="s99" class="mr_s" value="99">
+                                        <label for="s99">비노출</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </form>
             </div>
 
+            <button class="category_btn">검색</button>
+
             <div class="content_container product_info_container mt_l">
                 <div class="content_title_wrap">
-                    <h3>&nbsp;</h3>
+                    <h3>총 {{ number_format($list->total()) }}개</h3>
                     <div class="flex">
                         <button class="content_btn mr_m" type="button" onclick="">신규등록</button>
                         <button class="content_btn" type="button" onclick="">선택삭제</button>
