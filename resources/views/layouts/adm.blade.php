@@ -27,5 +27,6 @@
     </section>
     @include("common.script")
     <script src="{{ asset('js/common.js') }}"></script>
+    @yield("script")
 </body>
 </html>
