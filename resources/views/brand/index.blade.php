@@ -51,8 +51,7 @@
                 <div class="content_title_wrap">
                     <h3>총 {{ number_format($list->total()) }}개</h3>
                     <div class="flex">
-                        <button class="content_btn mr_m" type="button" onclick="">신규등록</button>
-                        <button class="content_btn" type="button" onclick="">선택삭제</button>
+                        <button class="content_btn mr_m" type="button" onclick="location.href='{{ route("brand.create") }}'">신규등록</button>
                     </div>
                 </div>
                 <hr />
@@ -83,7 +82,7 @@
                                 <td class="text_ac br_r">{{ $row->created_at }}</td>
                                 <td class="text_ac br_r red_c">{{ ($row->state == 1) ? "노출" : "비노출" }}</td>
                                 <td class="text_ac">
-                                    <button class="event_btn_two_right" onclick="">수정</button>
+                                    <button class="product_info_btn" onclick="">수정</button>
                                 </td>
                             </tr>
                             @php($c--)
