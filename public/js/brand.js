@@ -15,7 +15,7 @@
   \*******************************/
 /***/ (() => {
 
-eval("alert(1);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJhbGVydCJdLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvYnJhbmQuanM/ZTg3ZiJdLCJzb3VyY2VzQ29udGVudCI6WyJhbGVydCgxKTtcbiJdLCJtYXBwaW5ncyI6IkFBQUFBLEtBQUssQ0FBQyxDQUFELENBQUwiLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvYnJhbmQuanMuanMiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/js/brand.js\n");
+eval("//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvYnJhbmQuanMuanMiLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvYnJhbmQuanM/ZTg3ZiJdLCJzb3VyY2VzQ29udGVudCI6WyIiXSwibWFwcGluZ3MiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/brand.js\n");
 
 /***/ })
 
