@@ -8,34 +8,34 @@
                     <h3>브랜드</h3>
                 </div>
                 <hr/>
-                <form id="sform">
+                <form id="brand-list">
                     <table class="item_table">
                         <colgroup>
-                            <col style="width:20%"/>
-                            <col style="width:80%"/>
+                            <col style="width:10%"/>
+                            <col style="width:90%"/>
                         </colgroup>
                         <tbody>
                             <tr>
                                 <td class="table_c text_ac">브랜드명</td>
                                 <td class="text_al">
                                     <div class="flex flex_a_c">
-                                        <input type="text" name="key" class="table_input" value="">
+                                        <input type="text" name="keyword" class="table_input" value="{{ $val["keyword"] }}">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="table_c text_ac">주문상태</td>
+                                <td class="table_c text_ac">상태</td>
                                 <td class="text_al flex flex_a_c cate_line">
                                     <div class="flex flex_a_c mr_l">
-                                        <input type="radio" name="state" id="s-all" class="mr_s" value="" checked>
+                                        <input type="radio" name="state" id="s-all" class="mr_s" value="" {{ (empty($val["state"])) ? "checked" : "" }}>
                                         <label for="s-all">전체</label>
                                     </div>
                                     <div class="flex flex_a_c mr_l">
-                                        <input type="radio" name="state" id="s1" class="mr_s" value="1" >
+                                        <input type="radio" name="state" id="s1" class="mr_s" value="1" {{ ($val["state"] == 1) ? "checked" : "" }}>
                                         <label for="s1">노출</label>
                                     </div>
                                     <div class="flex flex_a_c mr_l">
-                                        <input type="radio" name="state" id="s99" class="mr_s" value="99">
+                                        <input type="radio" name="state" id="s99" class="mr_s" value="99" {{ ($val["state"] == 99) ? "checked" : "" }}>
                                         <label for="s99">비노출</label>
                                     </div>
                                 </td>
@@ -45,7 +45,7 @@
                 </form>
             </div>
 
-            <button class="category_btn">검색</button>
+            <button class="category_btn" onclick="search('brand-list')">검색</button>
 
             <div class="content_container product_info_container mt_l">
                 <div class="content_title_wrap">

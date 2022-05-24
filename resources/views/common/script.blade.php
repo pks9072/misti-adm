@@ -14,4 +14,8 @@
             }
         });
     });
+
+    function search(a) {
+        $("#" + a).attr("action", "").submit();
+    }
 </script>

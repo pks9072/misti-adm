@@ -21,8 +21,7 @@ class BrandController extends Controller
      */
     public function index(Request $request)
     {
-        $par["bname_k"] = $request->bname_k;
-        $par["bname_k"] = $request->bname_k;
+        $par["keyword"] = $request->keyword;
         $par["state"] = $request->state;
 
         $arr = json_encode($par);
@@ -32,7 +31,8 @@ class BrandController extends Controller
             "css" => $this->css,
             "m1" => $this->m1,
             "m2" => $this->m2,
-            "list" => $list
+            "list" => $list,
+            "val" => $par
         ];
 
         return view("brand.index")->with($data);

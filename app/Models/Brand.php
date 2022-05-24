@@ -11,11 +11,14 @@ class Brand extends Model
 
     public function list($arr) {
         $data = json_decode($arr, true);
-        $list = Brand::where(function ($q) use ($data){
-            foreach ($data as $key => $value) {
-                if(!empty($value)) {
-                    $q->where($key, "like", "%".$value."%");
-                }
+
+        $list = Brand::where(function($q) use($data) {
+            if(!empty($data["state"])) {
+                $q->where("state", $data["state"]);
+            }
+        })->orWhere(function($q) use($data) {
+            if(!empty($data["keyword"])) {
+                $q->orWhere("bname_k", "like", "%".$data["keyword"]."%")->orWhere("bname_e", "like", "%".$data["keyword"]."%");
             }
         })->orderBy("created_at", "desc")->paginate(15);
         return $list;
