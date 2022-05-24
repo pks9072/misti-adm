@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    private $css = "event";
+    private $css = "category";
     private $m1 = "goods";
     private $m2 = "brand";
 
@@ -45,7 +45,13 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            "css" => $this->css,
+            "m1" => $this->m1,
+            "m2" => $this->m2,
+        ];
+
+        return view("brand.create")->with($data);
     }
 
     /**
@@ -56,7 +62,14 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            "title" => "required|max:255",
+            "bname_k" => "required|unique:brands|max:255",
+            "bname_e" => "max:255",
+            "state" => "required",
+        ]);
+
+
     }
 
     /**
