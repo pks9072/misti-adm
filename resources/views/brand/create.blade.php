@@ -20,10 +20,10 @@
                                 <td class="table_c text_ac">브랜드명</td>
                                 <td class="text_al">
                                     <div class="flex flex_a_c">
-                                        <input type="text" name="title" class="table_input" class="@error('title') is-invalid @enderror">
+                                        <input type="text" name="bname_k" class="table_input" class="@error("bname_k") is-invalid @enderror">
                                     </div>
 
-                                    @error("title")
+                                    @error("bname_k")
                                     <div>
                                         {{ $message }}
                                     </div>
@@ -56,7 +56,7 @@
                     </table>
                 </form>
             </div>
-            @if ($errors->any())
+            {{--@if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -64,7 +64,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif--}}
 
             <div class="flex flex_jc mt_l" style="margin-bottom: 20px">
                 <button class="product_list_btn mr_m" onclick="$('#brand').submit()">등록</button>

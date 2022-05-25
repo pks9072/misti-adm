@@ -9,6 +9,8 @@ class Brand extends Model
 {
     use HasFactory;
 
+    protected $fillable = ["bname_k", "bname_e", "state"];
+
     public function list($arr) {
         $data = json_decode($arr, true);
 

@@ -63,13 +63,15 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            "title" => "required|max:255",
             "bname_k" => "required|unique:brands|max:255",
             "bname_e" => "max:255",
             "state" => "required",
         ]);
 
+        Brand::create($validated);
 
+
+        return redirect()->route("brand.index");
     }
 
     /**
