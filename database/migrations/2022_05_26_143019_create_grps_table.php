@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('groups', function (Blueprint $table) {
+        Schema::create('grps', function (Blueprint $table) {
             $table->id();
             $table->foreignId('section_id')->constrained()->onDelete('cascade');
             $table->foreignId('division_id')->constrained()->onDelete('cascade');
             $table->string('gname');
+            $table->integer('sort');
             $table->integer('state')->default(1);
             $table->timestamps();
         });
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groups');
+        Schema::dropIfExists('grps');
     }
 };
