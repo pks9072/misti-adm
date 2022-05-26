@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('section_id')->constrained()->onDelete('cascade');
             $table->string('dname');
+            $table->integer('sort');
             $table->integer('state')->default(1);
             $table->timestamps();
         });
