@@ -93,7 +93,20 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
-        //
+        $info = $this->BrandModel->info($id);
+
+        $data = [
+            "css" => $this->css,
+            "m1" => $this->m1,
+            "m2" => $this->m2,
+            "row" => $info
+        ];
+
+        if(!$info) {
+            return abort(404);
+        } else {
+            return view('brand.edit')->with($data);
+        }
     }
 
     /**
@@ -105,7 +118,7 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

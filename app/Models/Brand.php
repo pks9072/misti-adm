@@ -25,4 +25,14 @@ class Brand extends Model
         })->orderBy("created_at", "desc")->paginate(15);
         return $list;
     }
+
+    public function info($id) {
+        if(Brand::where("id", $id)->exists()) {
+            $info = Brand::where("id", $id)->get();
+        } else {
+            $info = false;
+        }
+
+        return $info;
+    }
 }
