@@ -5,7 +5,7 @@
         <section>
             <div class="content_container">
                 <div class="content_title_wrap">
-                    <h3>브랜드</h3>
+                    <h3>브랜드 리스트</h3>
                 </div>
                 <hr/>
                 <form id="brand-list">
@@ -82,7 +82,7 @@
                                 <td class="text_ac br_r">{{ $row->created_at }}</td>
                                 <td class="text_ac br_r red_c">{{ ($row->state == 1) ? "노출" : "비노출" }}</td>
                                 <td class="text_ac">
-                                    <button class="product_info_btn" onclick="">수정</button>
+                                    <button class="product_info_btn" onclick="location.href='{{ route("brand.edit", $row->id) }}'">수정</button>
                                 </td>
                             </tr>
                             @php($c--)
