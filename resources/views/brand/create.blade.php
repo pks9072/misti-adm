@@ -5,7 +5,7 @@
         <section>
             <div class="content_container">
                 <div class="content_title_wrap">
-                    <h3>브랜드</h3>
+                    <h3>브랜드 등록</h3>
                 </div>
                 <hr/>
                 <form id="brand" method="post" action="{{ route("brand.store") }}">
