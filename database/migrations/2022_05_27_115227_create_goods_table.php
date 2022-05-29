@@ -26,8 +26,11 @@ return new class extends Migration
             $table->integer('sale_price')->nullable()->default(0)->comment('할인');
             $table->integer('price')->comment('판매가');
             $table->json('icon')->nullable()->comment('아이콘');
-            $table->string('tag')->default(0);
-            $table->integer('state');
+            $table->decimal('star', 2,1)->nullable()->default(00.0)->comment('평점');
+            $table->integer('hit')->nullable()->default(0)->comment('조회수');
+            $table->integer('option')->nullable()->default(0)->comment('옵션');
+            $table->string('tag')->nullable()->default('')->comment('태그');
+            $table->integer('state')->comment('상품상태');
             $table->timestamps();
         });
     }
