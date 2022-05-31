@@ -22,6 +22,7 @@
         <header>
             @include("common.left")
             @include("common.header")
+            @yield("etc")
         </header>
         @yield("contents")
     </section>

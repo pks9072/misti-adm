@@ -2,10 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
 {
+    private $css = "category";
+    private $m1 = "goods";
+    private $m2 = "brand";
+
+    public function __construct() {
+        $this->SectionModel = new Section();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,16 @@ class SectionController extends Controller
      */
     public function index()
     {
-        //
+        $list = $this->SectionModel->list();
+
+        $data = [
+            "css" => $this->css,
+            "m1" => $this->m1,
+            "m2" => $this->m2,
+            "list" => $list,
+        ];
+
+        return view("category.section-index")->with($data);
     }
 
     /**
