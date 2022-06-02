@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\SectionController;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\YbleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +39,5 @@ Route::get('/test', function () {
 });
 
 
-Route::get('/kspark', [Controller::class, 'index']);
+Route::get('/yble/goods', [YbleController::class, 'goods']);
 
