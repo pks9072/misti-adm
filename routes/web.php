@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,7 +39,5 @@ Route::get('/test', function () {
 });
 
 
-Route::get('/test', function () {
-    return view('test');
-});
+Route::get('/kspark', [Controller::class, 'index']);
 
