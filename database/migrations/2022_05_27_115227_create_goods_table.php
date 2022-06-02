@@ -23,8 +23,10 @@ return new class extends Migration
             $table->foreignId('grp_id')->constrained()->onDelete('cascade')->comment('소분류');
             $table->string('name')->comment('상품명');
             $table->integer('normal_price')->comment('정상가');
-            $table->integer('sale_price')->nullable()->default(0)->comment('할인');
+            $table->integer('sale_price')->nullable()->default(0)->comment('할인가');
             $table->integer('price')->comment('판매가');
+            $table->json('images')->comment('이미지');
+            $table->text('contents')->comment('상품상세정보');
             $table->json('icon')->nullable()->comment('아이콘');
             $table->decimal('star', 2,1)->nullable()->default(00.0)->comment('평점');
             $table->integer('hit')->nullable()->default(0)->comment('조회수');
