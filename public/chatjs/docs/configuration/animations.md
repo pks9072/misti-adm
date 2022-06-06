@@ -71,10 +71,10 @@ The `onProgress` and `onComplete` callbacks are useful for synchronizing an exte
     // Function that renders the chart
     render: function,
 
-    // User callback
+    // Admin callback
     onAnimationProgress: function,
 
-    // User callback
+    // Admin callback
     onAnimationComplete: function
 }
 ```
