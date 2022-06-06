@@ -40,4 +40,5 @@ Route::get('/test', function () {
 
 
 Route::get('/yble/goods', [YbleController::class, 'goods']);
+Route::get('/yble/brands', [YbleController::class, 'brands']);
 
