@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Brand extends Model
 {
@@ -31,6 +32,18 @@ class Brand extends Model
             $info = Brand::where("id", $id)->get();
         } else {
             $info = false;
+        }
+
+        return $info;
+    }
+
+    public function yble($id) {
+        if(Brand::whereJsonContains("acode->yble", $id)->exists()) {
+            $data = Brand::whereJsonContains("acode->yble", $id)->get();
+            $info = $data[0]->id;
+        } else {
+            $info = false;
+            dd($id);
         }
 
         return $info;
