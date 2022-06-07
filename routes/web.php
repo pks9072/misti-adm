@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoodController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\YbleController;
@@ -29,6 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
 Route::prefix('goods')->group(function () {
     //Route::resource('/info', TeamController::class)->middleware('admin');
     //Route::resource('/info', TeamController::class);
+    Route::resource('/list', GoodController::class);
     Route::resource('/brand', BrandController::class);
     Route::resource('/category', SectionController::class);
 
