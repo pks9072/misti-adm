@@ -34,6 +34,7 @@
                 <span class="material-icons-outlined arrow">chevron_left</span>
             </a>
             <ul class="hidden_list {{ ($m1 == "goods") ? "show" : "" }}">
+                <li {{ ($m2 == "goods") ? "class=on" : "" }}><a href="/goods/list">상품</a></li>
                 <li {{ ($m2 == "brand") ? "class=on" : "" }}><a href="/goods/brand">브랜드</a></li>
                 <li {{ ($m2 == "category") ? "class=on" : "" }}><a href="/goods/category">카테고리</a></li>
                 {{--<li><a href="/product/import">상품 가져오기</a></li>
