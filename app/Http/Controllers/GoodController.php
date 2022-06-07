@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class GoodController extends Controller
 {
+    private $css = "category";
+    private $m1 = "goods";
+    private $m2 = "goods";
+
     public function __construct() {
         $this->GoodModel = new Good();
     }
@@ -15,9 +19,23 @@ class GoodController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $par["keyword"] = $request->keyword;
+        $par["state"] = $request->state;
+
+        $arr = json_encode($par);
+        $list = $this->GoodModel->list($arr);
+
+        $data = [
+            "css" => $this->css,
+            "m1" => $this->m1,
+            "m2" => $this->m2,
+            "list" => $list,
+            "val" => $par
+        ];
+
+        return view("goods.index")->with($data);
     }
 
     /**
