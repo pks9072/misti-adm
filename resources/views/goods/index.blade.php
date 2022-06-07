@@ -59,7 +59,7 @@
                     <colgroup>
                         <col style="width:3%" />
                         <col style="width:6%" />
-                        <col style="width:10%" />
+                        <col style="width:9%" />
                         <col style="width:30%" />
                         <col style="width:8%" />
                         <col style="width:8%" />
@@ -84,7 +84,7 @@
                         <tr>
                             <td class="text_ac"><input type="checkbox"></td>
                             <td class="text_ac br_r">{{ $c }}</td>
-                            <td class="text_al br_r"><img src="{{ $img["thumb"] }}" width="100" height="100"></td>
+                            <td class="text_ac br_r"><img src="{{ $img["thumb"] }}" width="100" height="100"></td>
                             <td class="text_al br_r">
                                 <span style="color: #10a9f8; font-size:13px">[{{ $row->brand->bname_k }} {{ !empty($row->brand->bname_e) ? "(".$row->brand->bname_e.")" : "" }}]</span> - <span style="font-size: 13px">{{ $row->affiliate->aname }}</span><br>
                                 {{ $row->name }}<br>
