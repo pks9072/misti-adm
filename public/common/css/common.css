@@ -193,6 +193,9 @@ body {
 .text_al {
   text-align: left;
 }
+.text_ar {
+    text-align: right;
+}
 
 /* 헤더 */
 header {
